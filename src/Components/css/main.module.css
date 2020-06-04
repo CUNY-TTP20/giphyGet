@@ -1,0 +1,19 @@
+.searchDiv{
+    max-width:60vw;
+    max-height: 40vh;
+    overflow: visible;
+    padding-left:40%;
+    
+}
+.buttonDiv {
+    display:gird;
+    padding-left: 40.2%;
+    padding-top:5%;
+    grid-template-columns: 2px;
+}
+.searchDiv button{
+    top:30%;
+    left:30%;
+    position:relative;
+
+}
