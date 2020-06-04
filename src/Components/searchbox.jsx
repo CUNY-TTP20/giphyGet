@@ -121,7 +121,7 @@ class SearchBox extends Component {
     event.preventDefault();
     axios
       .get(
-        `http://api.giphy.com/v1/gifs/search?q=${this.state.searchString}&api_key=${API}`
+        `https://api.giphy.com/v1/gifs/search?q=${this.state.searchString}&api_key=${API}`
       )
       .then((res) => {
         let data = res.data.data;
@@ -152,7 +152,7 @@ class SearchBox extends Component {
         trending: false,
       });
       axios
-        .get(`http://api.giphy.com/v1/gifs/random?api_key=${API}`)
+        .get(`https://api.giphy.com/v1/gifs/random?api_key=${API}`)
         .then((res) => {
           this.setState({
             gif_list: res.data.data,
@@ -193,7 +193,7 @@ class SearchBox extends Component {
       (this.state.regular === true || this.state.random === true)
     ) {
       axios
-        .get(`http://api.giphy.com/v1/gifs/trending?api_key=${API}`)
+        .get(`https://api.giphy.com/v1/gifs/trending?api_key=${API}`)
         .then((res) => {
           let data = res.data.data;
           let url_list = [];
