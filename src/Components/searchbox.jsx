@@ -3,14 +3,16 @@ import axios from "axios";
 import aKey from "./api.json";
 import classes from "./css/main.module.css";
 import GifTile from "./giftTile";
-// const API = process.env.API_KEY;
-const API = aKey.map((data) => {
-  return data.API;
-});
-// const regularCall = ``;
+const API = process.env.REACT_APP_API_KEY;
+// console.log("sssssssssssssssssssssssssss"+API_I)
+// const API = aKey.map((data) => {
+//   return data.API;
+// });
+// // const regularCall = ``;
 // const trendingCall = "http://api.giphy.com/v1/gifs/trending?api_key={API}";
 
 class SearchBox extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -26,6 +28,7 @@ class SearchBox extends Component {
   }
 
   render() {
+    
     const random = this.state.random;
     const trending = this.state.trending;
     const regular = this.state.regular;
@@ -144,20 +147,18 @@ class SearchBox extends Component {
   handleRandom = (event) => {
     if (
       this.state.random === false &&
-      (this.state.regular === true || this.state.trending === true)
-    ) {
-      this.setState({
-        random: true,
-        regular: false,
-        trending: false,
-      });
-      axios
-        .get(`https://api.giphy.com/v1/gifs/random?api_key=${API}`)
+      (this.state.regular === true || this.state.trending === true))
+{
+      axios.get(`https://api.giphy.com/v1/gifs/random?api_key=${API}`)
         .then((res) => {
+          let url_list = [[res.data.data.images.downsized_large.url,res.data.data.title]];
           this.setState({
-            gif_list: res.data.data,
+            gif_list: url_list,
             total: 1,
             picAvailable: true,
+            random: true,
+            regular: false,
+            trending: false,
           });
           console.log(this.state.gif_list);
         })
