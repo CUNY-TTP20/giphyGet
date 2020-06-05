@@ -34,8 +34,8 @@
   text-align: center;
   margin-top: 2rem;
   width: 340px;
-  animation: shake 0.5s;
-  -moz-animation: shake 0.2s;
+  animation: shake 0.8s;
+  -moz-animation: shake 0.8s;
   animation-iteration-count: infinite;
 }
 .tile:hover {
