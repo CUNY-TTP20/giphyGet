@@ -8,6 +8,7 @@ class GifTile extends Component {
           <img
             src={this.props.imgSource}
             alt={this.props.title}
+            className={classes.image}
             style={{
               width: "300px",
               height: "300px",
@@ -17,7 +18,9 @@ class GifTile extends Component {
             }}
           ></img>
         </div>
-        <h2>{this.props.title}</h2>
+        <h2 style={{ topPadding: "10px", fontFamily: "Architects Daughter" }}>
+          {this.props.title}
+        </h2>
       </div>
     );
   }
